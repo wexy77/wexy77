@@ -1,0 +1,14 @@
+        sed -i 's/#PKG_NAME/PKG_NAME/' make-deb.sh
+          bash make-deb.sh # Debian için Oluştur
+          bash make-deb.sh termux # Termux için oluşturun
+          find -type f -name "*.deb" -exec sha256sum "{}" > TOPLAM .txt \;
+          find -type f -name "*.deb" -exec sha256sum "{}" > KONTROL TOPLAMLARI .txt \;
+      - ad : Sürüme Yükle
+        kullanım alanları : softprops/action-gh-release@v1
+        ile :
+          dosyalar : " *.deb "
+      - kullanır : softprops/action-gh-release@v1
+        ile :
+          dosyalar : SUMS .txt
+          dosyalar : CHECKSUMS .txt
+taahhüt için 1 yorum04340e6
